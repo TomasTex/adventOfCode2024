@@ -17,7 +17,9 @@ with open('input.txt', 'r') as file:
         line = [int(n) for n in line.split()]  
         if lineIsValid(line):  
             nOfSafeReports += 1
+            print(line)
         elif validWithAFault(line): 
             nOfSafeReports += 1
+            print(line)
 
 print(nOfSafeReports)
