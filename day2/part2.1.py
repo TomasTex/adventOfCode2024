@@ -45,7 +45,6 @@ with open('input.txt', 'r') as file:
         line = [int(n) for n in line.split()]
         if all(1 <= line[i] - line[i - 1] <= 3 for i in range(1, len(line))) or all(-3 <= line[i] - line[i - 1] <= -1 for i in range(1, len(line))):
             nOfSafeReports += 1
-            print(line)
             continue
         listOfFaultyIndexes = getFaultyIndexes(line)
         for index in listOfFaultyIndexes:
@@ -53,7 +52,6 @@ with open('input.txt', 'r') as file:
             del tempLine[index]
             if all(1 <= tempLine[i] - tempLine[i - 1] <= 3 for i in range(1, len(tempLine))) or all(-3 <= tempLine[i] - tempLine[i - 1] <= -1 for i in range(1, len(tempLine))):
                 nOfSafeReports += 1
-                print(line)
                 break #prevents a line to be counted multiple times when there are two equal adjacent numbers ;-; 
      
 print(nOfSafeReports)
